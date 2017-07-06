@@ -5,8 +5,8 @@ div.container {
 
 header, footer {
     padding: 1em;
-    color: white;
-    background-color: black;
+    color: #B8860B;
+    background-color: #800000;
     clear: left;
     text-align: center;
 }
@@ -33,6 +33,7 @@ article {
     padding: 1em;
     overflow: hidden;
 }
+
 input[type=text] {
     width: 130px;
     box-sizing: border-box;
@@ -47,13 +48,12 @@ input[type=text] {
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
-
 input[type=text]:focus {
     width: 100%;
 }
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #B8860B;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -90,9 +90,9 @@ input[type=text]:focus {
 
 .show {display:block;}
 
- /* Dropdown Button */
+/* Dropdown Button */
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #800000;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -135,4 +135,4 @@ input[type=text]:focus {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
-} 
+}
