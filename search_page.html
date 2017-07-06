@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <link rel="stylesheet" href="style.css" />
+ <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
+      
+   <script type="text/javascript" src="http://use.typekit.com/oya4cmx.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>YuGiOh! Deck Browser</h1>
+</header>
+  <p> Are you looking for a card? Use its name to find it!</p>
+  <section id="fetch">
+      <input type="text" placeholder="Enter a name of a Card" id="term" />
+      <button id="search">Get the Data for the Card</button>
+   </section>
+   <section id="data">
+   </section>
+
+
+
+</div>
+
+</body>
+</html>
+
+<script  id="data">
+$(document).ready(function(res){
+
+
+
+
+   var getData = function(){
+
+res = new XMLHttpRequest();
+
+        var card = $('#term').val();
+
+        $.html("<img id="thePoster" src='http://yugiohprices.com/api/card_image/' + card/>);
+
+
+         if(card == ''){
+
+            $('#data').html("<h2 class='loading'>Please enter something.</h2>");
+
+         } else {
+
+            $('#data').html("<h2 class='loading'>Your data is on its way!</h2>");
+
+            $.getJSON("http://CORS-Anywhere.HerokuApp.com/http://yugiohprices.com/api/card_data/" + card + "&callback=?", function(json) {
+
+				console.log(json);
+               if (json != "fail"){
+                     $('#data').html('<h2 class="loading">We found the data.</h2><img id="theData" src=' + json.data + ' />');
+                  } 
+             });
+
+          }
+
+        return false;
+   }
+
+   $('#search').click(getData);
+   $('#term').keyup(function(event){
+       if(event.keyCode == 13){
+           getData();
+       }
+   });
+
+});
+
+</script>
