@@ -14,7 +14,7 @@ CREATE TABLE `card_data` (
   PRIMARY KEY (`id`),
 )
 
- 	$name = $_GET['name'];
+    $name = $_GET['name'];
     $text = $_GET['text'];
     $card_type = $_GET['card_type'];
     $type = $_GET['type'];
